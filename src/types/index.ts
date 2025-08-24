@@ -6,4 +6,5 @@ export interface User {
   cpf?: string;
   birthDate?: string;
   address?: string;
+  gender?: string;
 }

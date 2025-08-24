@@ -33,6 +33,10 @@ const UserList: React.FC = () => {
     return <div className={`${styles.message} ${styles.error}`}>{error}</div>;
   }
 
+  if (users.length === 0) {
+    return <div className={styles.message}>Nenhum usuário cadastrado.</div>;
+  }
+
   return (
     <div>
       <h1 className={styles.title}>Painel de Usuarios</h1>

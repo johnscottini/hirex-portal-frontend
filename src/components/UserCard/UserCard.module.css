@@ -1,20 +1,22 @@
 .cardLink {
   text-decoration: none;
   color: inherit;
+  display: block;
 }
 
 .card {
   background-color: var(--surface-color);
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--card-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   border: 1px solid var(--border-color);
+  height: 100%; 
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 .cardContent {
@@ -31,4 +33,5 @@
   margin: 0;
   font-size: 0.9rem;
   color: var(--text-secondary-color);
+  word-break: break-all;
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getUserById } from '../../services/api';
 import styles from './UserDetail.module.css';
-import type { User } from '../../types'; 
+import type { User } from '../../types';
 
 const UserDetail: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -36,21 +36,39 @@ const UserDetail: React.FC = () => {
   }
 
   return (
-    <div className={styles.detailContainer}>
-      <Link to="/users" className={styles.backLink}>&larr; Voltar para a lista</Link>
+    <div>
+      <Link to="/users" className={styles.backLink}>&larr; Voltar para a lista de candidatos</Link>
       {user ? (
-        <div className={styles.detailCard}>
-          <h1 className={styles.userName}>{user.name}</h1>
+        <div className={styles.detailContainer}>
+          <div className={styles.header}>
+            <h1 className={styles.userName}>{user.name}</h1>
+            <p className={styles.userEmail}>{user.email}</p>
+          </div>
           <div className={styles.userInfo}>
-            <p><strong>Email:</strong> {user.email}</p>
-            <p><strong>Telefone:</strong> {user.phone || 'Não informado'}</p>
-            <p><strong>CPF:</strong> {user.cpf || 'Não informado'}</p>
-            <p><strong>Data de Nascimento:</strong> {user.birthDate || 'Não informada'}</p>
-            <p><strong>Endereço:</strong> {user.address || 'Não informado'}</p>
+            <div className={styles.infoItem}>
+              <span className={styles.infoLabel}>Telefone</span>
+              <span className={styles.infoValue}>{user.phone || 'Não informado'}</span>
+            </div>
+            <div className={styles.infoItem}>
+              <span className={styles.infoLabel}>CPF</span>
+              <span className={styles.infoValue}>{user.cpf || 'Não informado'}</span>
+            </div>
+            <div className={styles.infoItem}>
+              <span className={styles.infoLabel}>Data de Nascimento</span>
+              <span className={styles.infoValue}>{user.birthDate || 'Não informada'}</span>
+            </div>
+            <div className={styles.infoItem}>
+              <span className={styles.infoLabel}>Endereço</span>
+              <span className={styles.infoValue}>{user.address || 'Não informado'}</span>
+            </div>
+            <div className={styles.infoItem}>
+              <span className={styles.infoLabel}>Gênero</span>
+              <span className={styles.infoValue}>{user.gender || 'Não informado'}</span>
+            </div>
           </div>
         </div>
       ) : (
-        <p>Usuário não encontrado.</p>
+        <p className={styles.message}>Usuário não encontrado.</p>
       )}
     </div>
   );
