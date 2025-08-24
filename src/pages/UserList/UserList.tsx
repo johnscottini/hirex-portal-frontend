@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getUsers } from '../../services/api';
-import UserCard from '../../components/UserCard/UserCard';
 import styles from './UserList.module.css';
 import type { User } from '../../types';
+import UserCard from '../../components/UserCard/UserCard';
 
 const UserList: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
