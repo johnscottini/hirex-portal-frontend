@@ -1,0 +1,59 @@
+.detailContainer {
+  padding: 2rem;
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.backLink:hover {
+  transform: translateX(-5px);
+}
+
+.detailCard {
+  text-align: left;
+}
+
+.userName {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.userInfo p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.userInfo p:last-child {
+  border-bottom: none;
+}
+
+.userInfo strong {
+  color: var(--text-color);
+  margin-right: 0.5rem;
+}
+
+.message {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 4rem;
+  color: var(--text-secondary-color);
+}
+
+.error {
+  color: #ff6b6b;
+}
